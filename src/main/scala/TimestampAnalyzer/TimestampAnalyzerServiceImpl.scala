@@ -1,0 +1,5 @@
+package TimestampAnalyzer
+
+class TimestampAnalyzerServiceImpl {
+
+}

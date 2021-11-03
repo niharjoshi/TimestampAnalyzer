@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "TimestampAnalyzer";
+option java_outer_classname = "TimestampAnalyzerProto";
+
+service TimestampAnalyzerService {
+    rpc AnalyzeTimestamp (AnalyzeTimestampRequest) returns (AnalyzeTimestampReply) {}
+}
+
+message AnalyzeTimestampRequest {
+    string time_stamp = 1;
+    string time_interval = 2;
+    string bucket = 3;
+}
+
+message AnalyzeTimestampReply {
+    int64 status = 1;
+    string message = 2;
+    string logs = 3;
+}
