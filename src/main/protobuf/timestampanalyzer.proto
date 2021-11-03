@@ -15,7 +15,5 @@ message AnalyzeTimestampRequest {
 }
 
 message AnalyzeTimestampReply {
-    int32 status = 1;
-    string message = 2;
-    string logs = 3;
+    string logs = 1;
 }

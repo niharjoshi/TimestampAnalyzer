@@ -28,6 +28,6 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-stream-testkit" % akkaVersion % Test,
   "org.scalatest" %% "scalatest" % "3.2.9" % Test,
 
-  "io.spray" %%  "spray-json" % "1.3.6",
-  "org.scalaj" % "scalaj-http_2.11" % "2.4.2"
+  "com.lihaoyi" %% "requests" % "0.6.9",
+  "com.lihaoyi" %% "upickle" % "1.4.2"
 )
