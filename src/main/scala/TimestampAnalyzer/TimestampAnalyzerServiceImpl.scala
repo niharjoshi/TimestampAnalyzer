@@ -3,14 +3,8 @@ package TimestampAnalyzer
 import HelperUtils.ObtainConfigReference
 
 import scala.concurrent.Future
-import akka.NotUsed
 import akka.actor.typed.ActorSystem
-import akka.stream.scaladsl.BroadcastHub
-import akka.stream.scaladsl.Keep
-import akka.stream.scaladsl.MergeHub
-import akka.stream.scaladsl.Sink
-import akka.stream.scaladsl.Source
-import requests.post
+import requests.{RequestFailedException, post}
 import ujson.read
 
 class TimestampAnalyzerServiceImpl(system: ActorSystem[_]) extends TimestampAnalyzerService {
@@ -32,11 +26,20 @@ class TimestampAnalyzerServiceImpl(system: ActorSystem[_]) extends TimestampAnal
                  |  "bucket": "${request.bucket}"
                  |}""".stripMargin
 
-    val res = post(endpoint, data = req)
+    try {
 
-    val json_output = ujson.read(res.text()).toString()
+      val res = post(endpoint, data = req)
+      val json_output = read(res.text()).toString()
+      Future.successful(AnalyzeTimestampReply(json_output))
 
-    Future.successful(AnalyzeTimestampReply(json_output))
+    } catch{
+
+      case e: RequestFailedException => {
+        Future.successful(AnalyzeTimestampReply("404 - no matching logs found within the given time range"))
+      }
+
+      case _: Throwable => Future.successful(AnalyzeTimestampReply("Some other runtime exception occurred"))
+    }
   }
 
 }
