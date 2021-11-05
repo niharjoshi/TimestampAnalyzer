@@ -1,9 +1,12 @@
 package HelperUtils
 
+// Importing necessary packages
 import org.scalatest.flatspec.AnyFlatSpec
+
 
 class ObtainConfigReferenceTest extends AnyFlatSpec {
 
+  // Testing config reader creation
   "Config utility" should "create a config reader" in {
 
     val config = ObtainConfigReference.apply("TimestampAnalyzer")

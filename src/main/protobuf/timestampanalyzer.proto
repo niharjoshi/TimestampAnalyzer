@@ -4,17 +4,24 @@ option java_multiple_files = true;
 option java_package = "TimestampAnalyzer";
 option java_outer_classname = "TimestampAnalyzerProto";
 
+// Defining the RPC methods
 service TimestampAnalyzerService {
+    // Method for RPC-REST communication via POST through AWS API Gateway to our Lambda function
     rpc AnalyzeTimestamp (AnalyzeTimestampRequest) returns (AnalyzeTimestampReply) {}
+    // Method for RPC-REST communication via GET through AWS API Gateway to our Lambda function
     rpc RequestLogs (AnalyzeTimestampRequest) returns (AnalyzeTimestampReply) {}
 }
 
+// Defining the RPC request
 message AnalyzeTimestampRequest {
+    // Request will comprise time stamp, time delta and S3 bucket name
     string time_stamp = 1;
     string time_interval = 2;
     string bucket = 3;
 }
 
+// Defining the RPC response
 message AnalyzeTimestampReply {
+    // Response will comprise logs/hashed logs as a string list
     string logs = 1;
 }
