@@ -6,6 +6,7 @@ option java_outer_classname = "TimestampAnalyzerProto";
 
 service TimestampAnalyzerService {
     rpc AnalyzeTimestamp (AnalyzeTimestampRequest) returns (AnalyzeTimestampReply) {}
+    rpc RequestLogs (AnalyzeTimestampRequest) returns (AnalyzeTimestampReply) {}
 }
 
 message AnalyzeTimestampRequest {

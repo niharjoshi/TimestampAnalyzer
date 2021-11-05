@@ -29,5 +29,8 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.2.9" % Test,
 
   "com.lihaoyi" %% "requests" % "0.6.9",
-  "com.lihaoyi" %% "upickle" % "1.4.2"
+  "com.lihaoyi" %% "upickle" % "1.4.2",
+
+  "org.eclipse.jetty" % "jetty-http" % "11.0.6",
+  "org.eclipse.jetty" % "jetty-client" % "11.0.6"
 )

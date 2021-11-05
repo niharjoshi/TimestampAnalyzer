@@ -18,13 +18,29 @@ object TimestampAnalyzerClient {
     val time_stamp :: time_interval :: bucket :: _ = args.toList
 
     analyzeTimestampReply(time_stamp, time_interval, bucket)
+    requestLogsReply(time_stamp, time_interval, bucket)
 
 
     def analyzeTimestampReply(time_stamp: String, time_interval: String, bucket: String): Unit = {
+      println("Using POST request")
       println(s"Time stamp: $time_stamp")
       println(s"Time interval: +-$time_interval")
       println(s"Reading data from S3 bucket: $bucket")
       val reply = client.analyzeTimestamp(AnalyzeTimestampRequest(time_stamp, time_interval, bucket))
+      reply.onComplete {
+        case Success(msg) =>
+          println(msg)
+        case Failure(e) =>
+          println(s"Error: $e")
+      }
+    }
+
+    def requestLogsReply(time_stamp: String, time_interval: String, bucket: String): Unit = {
+      println("Using GET request")
+      println(s"Time stamp: $time_stamp")
+      println(s"Time interval: +-$time_interval")
+      println(s"Reading data from S3 bucket: $bucket")
+      val reply = client.requestLogs(AnalyzeTimestampRequest(time_stamp, time_interval, bucket))
       reply.onComplete {
         case Success(msg) =>
           println(msg)
