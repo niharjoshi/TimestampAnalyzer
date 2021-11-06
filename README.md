@@ -12,7 +12,7 @@ Second, we deploy the LogFileGenerator application on an AWS EC2 instance and ma
 
 Third, we build a gRPC client-server application that communicates with our Lambda function and remotely executes it, returning the md5 hashes of all the matched logs.
 
-The whole deployment process is described in this video: TODO
+The whole deployment process is described in this video: [YouTube](https://www.youtube.com/playlist?list=PL0k75q4RIbesEko3QVUwWId-cRukKgIhS)
 
 ## Prerequisites & Installation
 
@@ -85,7 +85,7 @@ curl --location --request GET 'https://72v5vwkii3.execute-api.us-east-2.amazonaw
 
 The following diagram summarizes the system architecture.
 
-The detailed deployment process is explained in this YouTube video: TODO
+The detailed deployment process is explained in this YouTube video: [YouTube](https://www.youtube.com/playlist?list=PL0k75q4RIbesEko3QVUwWId-cRukKgIhS)
 
 ![Alt text](doc/workflow.jpg?raw=true "System Architecture")
 
