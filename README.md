@@ -103,6 +103,11 @@ Next, we create an IAM role for Lambda and add the "S3Read and S3Write" permissi
 Then, we create a new Lambda function in Python and add the **lambda_function.py** code to it.
 Once, the Lambda function is deployed, we need to connect it to an API endpoint.
 
+#### Lambda Function
+The Lambda function has been written in Python 3.9.
+It uses Binary Search in order to search through the log files in **O(log n)** time.
+The Lambda function code can be found here: [Lambda](https://github.com/niharjoshi/TimestampAnalyzer/blob/master/lambda/lambda_function.py)
+
 Next, we navigate to the AWS API Gateway dashboard and create a new endpoint.
 Once we generate our link structure, we add a method to our endpoint.
 Since the problem statement requires both REST POST and GET support, we add both these methods.
