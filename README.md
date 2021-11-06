@@ -94,7 +94,7 @@ Then, we create an IAM role for EC2 and add the "S3Read and S3Write" permissions
 Next, we create an EC2 instance and attach this role to it.
 
 After our EC2 instance has booted up, we SSH into it and clone the LogFileGeneratorDeployment repository onto it: https://github.com/niharjoshi/LogFileGeneratorDeployment.git.
-This repo is just a modification of LogFileGenerator with the addition of a function that writes the log to S3 as they are being produced.
+This repo is just a modification of LogFileGenerator with the addition of a function that writes the logs to S3 as they are being produced.
 
 Next, we navigate to the repo and run the generator using *sbt run*.
 If we check our S3 bucket, logs will be written to it.
@@ -170,7 +170,7 @@ gRPC client
 
 
 ## Checklist
-- [x] All 4 interlocked tasks
+- [x] All 3 interlocked tasks
 - [x] In-depth documentation
 - [x] Successful AWS EC2 deployment
 - [x] Successful AWS API Gateway + AWS Lambda deployment
