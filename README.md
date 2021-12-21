@@ -1,9 +1,7 @@
-# Name: Nihar Shailesh Joshi
-
-# Homework 3
+# Log File Timestamps Analyzer
 
 ## Introduction
-In this assignment, we build a Log File Analyzer framework composed of three interlocked components.
+In this project, we build a Log File Analyzer framework composed of three interlocked components.
 
 First, we deploy a Lambda function on AWS and expose it via a public endpoint using the AWS API Gateway.
 This Lambda function analyzes log files stored in an S3 bucket and finds whether any logs within a given timeframe are present in them.
@@ -16,7 +14,7 @@ The whole deployment process is described in this video: [YouTube](https://youtu
 
 ## Prerequisites & Installation
 
-In order to run the algorithms implemented in this assignment, I recommend cloning this repository onto your local machine and running it from the command-line using the interactive build tool **sbt**.
+In order to run the algorithms implemented in this project, I recommend cloning this repository onto your local machine and running it from the command-line using the interactive build tool **sbt**.
 
 *Note: In order to install sbt, please follow the OS-specific instructions at https://www.scala-sbt.org/1.x/docs/Setup.html.*
 
